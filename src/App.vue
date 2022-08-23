@@ -4,7 +4,7 @@
       :topic-title="activeTopic && activeTopic.title"
       :text="activeTopic && activeTopic.fullText"
     ></active-element>
-    <knowledge-base @select-topic="activateTopic"></knowledge-base>
+    <knowledge-base></knowledge-base>
   </div>
 </template>
 
@@ -54,6 +54,7 @@ export default {
   provide() {
     return {
       topics: this.topics,
+      selectTopic: this.activateTopic,
     };
   },
   methods: {
@@ -67,7 +68,7 @@ export default {
         id: 'events',
         title: 'Events',
         description: 'Events are important in Vue',
-        fullText: 'Events allow you to trigger code on demand!', 
+        fullText: 'Events allow you to trigger code on demand!',
       });
     }, 3000);
   },
